@@ -81,6 +81,10 @@ function getServiceStatus(callback) {
   req.addEventListener('load', function reqListener () {
     callback(JSON.parse(this.responseText));
   });
-  req.open('GET', 'http://localhost:3000/service-status');
+  req.addEventListener('error', function onError () {
+    console.warn('Retying...');
+    getServiceStatus(callback);
+  });
+  req.open('GET', 'http://localhost:' + this.location.port + '/service-status');
   req.send();
 }
