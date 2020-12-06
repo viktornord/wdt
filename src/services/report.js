@@ -22,7 +22,7 @@ async function requestServiceStatus({ token }) {
 
 async function getServiceStatus({ token }) {
   const jobId = await requestServiceStatus({ token });
-  await delay(1000); // 1 sec delay (service is not ready to report yet)
+  await delay(2000); // 2 sec delay (service is not ready to report yet)
   const response = await httpuv.get(`${REPORTS_BASE_URL}/reports/status/service/${jobId}`, {
     headers: {
       Authorization: `Bearer ${token}`,

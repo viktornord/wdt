@@ -13,6 +13,7 @@ const authMiddleWare = async (req, res, next) => {
 };
 
 app
+  .use(express.static('ui'))
   .get('/service-status', authMiddleWare, async ({ token }, res) => {
     const serviceStatus = await getServiceStatus({ token });
     res.send(serviceStatus);
