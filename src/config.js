@@ -5,6 +5,8 @@ const {
   CLIENT_ID,
   CLIENT_SECRET,
   PORT,
+  AUTH_BASE_URL,
+  REPORTS_BASE_URL,
 } = process.env;
 
 module.exports = {
@@ -12,4 +14,6 @@ module.exports = {
   CLIENT_ID,
   CLIENT_SECRET,
   PORT,
+  AUTH_BASE_URL,
+  REPORTS_BASE_URL,
 };
